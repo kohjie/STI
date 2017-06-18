@@ -10,19 +10,37 @@ arguement6=$7
 arguement7=$8
 arguement8=$9
 
-if [ "$choice" == "print" ]
+#firewall rules
+if [ "$choice" == "printrule" ]
 then
-	python firewallcrud.py print > file.txt
+	python filtercrud.py printrule > file.txt
 
-elif [ "$choice" == "create" ]
+elif [ "$choice" == "createrule" ]
 then
-	python firewallcrud.py create $arguement1 $arguement2 $arguement3 $arguement4 $arguement5 $arguement6 $arguement7 > file.txt
+	python filtercrud.py createrule $arguement1 $arguement2 $arguement3 $arguement4 $arguement5 $arguement6 $arguement7 > file.txt
 
-elif [ "$choice" == "update" ]
+elif [ "$choice" == "updaterule" ]
 then
- 	python firewallcrud.py update $arguement1 $arguement2 $arguement3 $arguement4 $arguement5 $arguement6 $arguement7 $arguement8 > file.txt
+ 	python filtercrud.py updaterule $arguement1 $arguement2 $arguement3 $arguement4 $arguement5 $arguement6 $arguement7 $arguement8 > file.txt
 
-elif [ "$choice" == "delete" ]
+elif [ "$choice" == "deleterule" ]
 then
-	python firewallcrud.py delete $arguement1 > file.txt
+	python filtercrud.py deleterule $arguement1 > file.txt
+
+#firewall address lists
+elif [ "$choice" == "printlist" ]
+then
+	python addrlistcrud.py printlist > file.txt
+
+elif [ "$choice" == "createlist" ]
+then
+	python addrlistcrud.py createlist $arguement1 $arguement2 > file.txt
+
+elif [ "$choice" == "updatelist" ]
+then
+	python addrlistcrud.py updatelist $arguement1 $arguement2 $arguement3 > file.txt
+
+elif [ "$choice" == "deletelist" ]
+then
+	python addrlistcrud.py deletelist $arguement1 > file.txt
 fi
