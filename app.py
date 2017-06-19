@@ -2,6 +2,7 @@
 from flask import Flask, jsonify, abort, make_response, request, url_for
 from flask.ext.httpauth import HTTPBasicAuth
 import json
+import api.py
 
 app = Flask(__name__, static_url_path = "")
 auth = HTTPBasicAuth()
